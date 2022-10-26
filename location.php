@@ -52,7 +52,11 @@ $resultImages = $images->fetchAll();
 </head>
 <body>
 <?php require('./includes/nav.php') ?>
-    <main>       
+<?php require('./includes/popupInscription.php') ?>
+    <?php require('./includes/popupConnexion.php') ?>
+    <main>
+ 
+       
         <div class="location"> 
             <?php foreach($result as $roomSlot): ?>                                
                 <h1><?= $roomSlot['name'] ?> 
@@ -124,5 +128,6 @@ $resultImages = $images->fetchAll();
 
 
 </main>
+<script src="./script/menu.js"></script>
 </body>
 </html>

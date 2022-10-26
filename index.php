@@ -32,7 +32,10 @@ $moyenne  = $dbh->query("SELECT AVG(`score`)
 </head>
 <body>
     <?php require('./includes/nav.php') ?>
+    <?php require('./includes/popupInscription.php') ?>
+    <?php require('./includes/popupConnexion.php') ?>
 <main>
+
 
 <div class="containerCard">
 <?php foreach($result as $roomSlot): ?>

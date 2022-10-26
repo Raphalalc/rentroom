@@ -25,10 +25,13 @@
                 <img id="person" src="./assets/icon_person.png" width="20" height='24' alt="icon person" >
                 </div>
         <div class="dropdown-content">
-                <p><b>Inscription</b></p>
-                <p>Connexion</p>
+                <p><a href="#suscribe"><b>Inscription</b></a></p>
+                <p><a href="#connexion">Connexion</a></p>
         </div>
 </div>
+
+       
+    </div>    
 </div>
 </div>
 </div>

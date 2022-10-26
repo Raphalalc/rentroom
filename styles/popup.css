@@ -1,0 +1,64 @@
+.overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.4s;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay .form_suscribe {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.overlay .form_suscribe input {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 94%;
+  height: 40px;
+  border: solid rgba(0, 0, 0, 0.212) 0.5px;
+}
+.overlay .form_suscribe input:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.overlay .form_suscribe input:last-child {
+  border-bottom: solid rgba(0, 0, 0, 0.212) 0.5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 6rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 5px;
+  width: 35%;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+
+.popup .cross {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+  color: #333;
+}
+
+.popup .cross:hover {
+  color: #12FCF8;
+}/*# sourceMappingURL=popup.css.map */

@@ -12,6 +12,9 @@ if(isset($_POST['envoi'])){
     $email = htmlspecialchars( $_POST['email']);
     $password =sha1($_POST['password']);
 
+    $inscription = $dbh->query("INSERT INTO `user`(`username`, `first_name`, `last_name`, `email`, `password`) VALUES ('$user_name','$first_name','$last_name','$email','$password')");
+    $dbh->exec('$inscription');    
+
 echo 'New record created successfully';
     }else{
         echo 'Veuillez remplir tous les champs';
