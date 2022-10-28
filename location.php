@@ -4,6 +4,7 @@ require('./includes/database.php');
 require('./includes/flash.php');
 $id = $_GET['id'];
 $city = $_GET['city'];
+$room_id = $_GET['room_id'];
 
 //room et slot
 $req = $dbh->query("SELECT *

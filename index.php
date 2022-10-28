@@ -40,7 +40,7 @@ $moyenne  = $dbh->query("SELECT AVG(`score`)
 <?php foreach($result as $roomSlot): ?>
 <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     <div class="Card">
-        <a href="location.php?id=<?= $roomSlot['id']?>&city=<?= $roomSlot['city']?> "> 
+        <a href="location.php?id=<?= $roomSlot['id']?>&city=<?= $roomSlot['city']?>&room_id=<?= $roomSlot['room_id']?> "> 
         <div class="imgCard">
             <img src="<?= $roomSlot['picture_url'] ?>" alt="room">
         </div>

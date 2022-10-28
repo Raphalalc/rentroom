@@ -208,9 +208,9 @@ body{
             text-decoration:none;
         }
         .imgCard{
+            width:300px;
+            height:300px;
             img{
-                width:300px;
-                height:300px;
                 border-radius:20px;
             }
         }
@@ -247,18 +247,10 @@ body{
     }
     }
 }
-/* --------------- Responsive Card ---------------- */
+
 @media (max-width: 376px) { 
-.containerCard{ 
-    gap: 1em;
-    .Card{
-        width:280px;
-        .imgCard{    
-            img{
-    width:280px;
-    height:280px;
-    border-radius:20px;
-}}}}
+.containerCard{.Card{.imgCard{   width:280px;
+    height:460px;}}}
 }
 /* --------------- LOCATION PAGE ---------------- */
 
@@ -372,7 +364,7 @@ body{
     }
 
 
-  /* --------------- Responsive Location Page ---------------- */
+    // RESPONSIVE LOCATION PAGE
 @media (max-width: 1025px) {
     .location{
         width:762px;
@@ -381,10 +373,10 @@ body{
                 width:400px; height:300px;
             }
         }
-
+   
     .reservation{ 
         height:110px;
-        }
+    }
     } 
 }
 
@@ -400,7 +392,8 @@ body{
                 font-size:0.7rem;
             }
         }
-        .parent {       
+        .parent {
+            
             margin-left:1rem;
             margin-right:1rem;
             display: grid;
@@ -439,9 +432,11 @@ body{
                 
             }
             img{
+                
                 width:100%;
                 height:auto;
             }
+            
         }
         
         .div1{

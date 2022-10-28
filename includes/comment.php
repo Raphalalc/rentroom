@@ -1,8 +1,34 @@
+<?php
+  if(isset($_POST['add_comment'])){
+    if($_SESSION['id']==null){
+      echo "Vous devez être connecté pour poster un commentaire";
+    }else{
+    $comment = $_POST['comment'];
+    $score = $_POST['score'];
+    $user_id = $_SESSION['id'];
+    $room_id = $_GET['room_id'];
+    // $add_comment = $dbh->query("INSERT  INTO `feedback` (`user_id`, `room_id`, `comment`, `score`) VALUES (1, 1, 'C\'est un super endroit', 5");
+  echo 'commentaire : ' . $comment .'<br>';
+  echo 'note : ' . $score .'<br>';
+  echo 'user_id : ' . $user_id .'<br>';
+  echo 'room_id : ' . $room_id .'<br>';
+    }
+ };
+    
 
+
+?>
   
      
    <div class="containerComment">
-   
+    <form action="post">
+    
+    <input type="text" name="comment" placeholder="Ecrivez votre commentaire" >
+    
+    <input type="text" name="score" placeholder="Ecrivez une note de 0 à 10">
+    </div>
+   <button name="add_comment">Ajouter un commentaire</button>
+    </form>
      <h2>Commentaires</h2>
             <?php foreach($resultFeed as $feed): ?>
                 <p><?= '<span class="score">'.$feed['score']. ' 
