@@ -1,4 +1,3 @@
-<?php if(isset($_POST['button1'])) { session_unset();}?>
 
 <nav class="navigation">
     <div class="parent">

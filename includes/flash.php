@@ -10,3 +10,8 @@ function flashConnexion($message)
 {
     $_SESSION['flashConnexion'] = ['message' => $message,];
 }
+
+function flashComment($message)
+{
+    $_SESSION['flashComment'] = ['message' => $message,];
+}

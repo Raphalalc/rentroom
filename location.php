@@ -4,7 +4,7 @@ require('./includes/database.php');
 require('./includes/flash.php');
 $id = $_GET['id'];
 $city = $_GET['city'];
-
+$room_id = $_GET['room_id'];
 //room et slot
 $req = $dbh->query("SELECT *
 FROM `slot` 
@@ -37,6 +37,9 @@ $resultImages = $images->fetchAll();
     WHERE slot.id = $_GET[id]");
     $resultMoyenne  = $moyenne ->fetchAll();  
 
+    if(isset($_POST['button1'])) { session_unset();}
+
+    require('./includes/commentaireScript.php'); 
 ?>
 
 
