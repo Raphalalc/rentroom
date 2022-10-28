@@ -7,8 +7,8 @@
         <?php endif ?>
 
     <form action="post">
-      <input type="text" name="comment" placeholder="Ecrivez votre commentaire" >
-      <input type="text" name="score" placeholder="Ecrivez une note de 0 à 10">
+      <input type="text" name="comment" placeholder="Ecrivez votre commentaire" autocomplete="off">
+      <input type="text" name="score" placeholder="Ecrivez une note de 0 à 10" autocomplete="off">
       <button name="add_comment">Ajouter un commentaire</button>
     </form>
      <h2>Commentaires</h2>

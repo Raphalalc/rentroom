@@ -16,11 +16,12 @@ $result = $req->fetchAll();
 //feedback
 $feed = $dbh->query("SELECT * 
 FROM slot 
-JOIN room 
+JOIN room  
 ON slot.room_id = room.id 
 JOIN feedback 
 ON feedback.room_id = room.id 
-WHERE slot.id = $_GET[id]");
+WHERE slot.id = $_GET[id]
+ORDER BY feedback.created_at DESC");
 $resultFeed = $feed->fetchAll();  
 
 //liste d'images

@@ -63,3 +63,11 @@ SELECT * FROM `feedback, room, user` WHERE `feedback`.`room_id` = `room`.`id` AN
 
 INSERT INTO `user` (`username`, `first_name`, `last_name`, `password`, `email`) VALUES ('raphael', 'raphael', 'alcantara', '1234','raphael@gmail.com');
 
+$feed = $dbh->query("SELECT * 
+FROM slot 
+JOIN room  
+ON slot.room_id = room.id 
+JOIN feedback 
+ON feedback.room_id = room.id 
+WHERE slot.id = $_GET[id]
+ORDER BY slot.arrival_date DESC");
