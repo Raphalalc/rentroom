@@ -356,7 +356,7 @@ body{
 
     .containerComment{
         margin-top:30px;
-        border-top:solid rgba(0, 0, 0, 0.212) 0.5px;
+     
         
     h2{
         margin-top:30px;
@@ -371,7 +371,54 @@ body{
     }
     }
 
-
+   /* --------------- Comment Page ---------------- */
+   .containerComment{
+button{
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    margin-top:-1rem;
+    font-size:1rem;
+    border:none;
+    background: $purple;
+    padding:1rem;
+    color:white;
+    height:30px;
+    border-radius:20px;
+    cursor:pointer;
+}
+   
+   .commentsubmit{
+    
+        #comment{
+            margin-top:20px;
+            width:100%;
+            border:none;
+            border-bottom: solid rgba(0, 0, 0, 0.212) 0.5px;
+        }
+      input:focus{
+            border-bottom: solid rgba(0, 0, 0, 0.212) 0.5px;
+            outline: none;
+            border-bottom: solid;
+        }
+        #score{
+            margin-top:0.5rem;
+            border:none;
+            border-bottom: solid rgba(0, 0, 0, 0.212) 0.5px;        
+        }
+    }
+   }
+ /* --------------- Responsive Comment Page ---------------- */
+ @media(max-width:469px){
+    .containerComment{
+        button{
+            position:relative;
+            margin-left:0;
+            margin-top:0.5rem;
+            font-size:0.8rem;
+        }
+    }
+ }
   /* --------------- Responsive Location Page ---------------- */
 @media (max-width: 1025px) {
     .location{
@@ -435,8 +482,6 @@ body{
                     margin-top:0.5rem;           
                     margin-bottom:1rem;         
                 }
-
-                
             }
             img{
                 width:100%;

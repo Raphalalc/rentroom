@@ -85,7 +85,7 @@
   .overlay .suscribe {
     width: 80%;
   }
-  button {
+  .overlay button {
     width: 97%;
     padding-left: 0.55rem;
     padding-right: 0.55rem;
@@ -454,7 +454,6 @@ body {
 }
 .location .containerComment {
   margin-top: 30px;
-  border-top: solid rgba(0, 0, 0, 0.212) 0.5px;
 }
 .location .containerComment h2 {
   margin-top: 30px;
@@ -466,6 +465,47 @@ body {
   font-size: 24px;
 }
 
+/* --------------- Comment Page ---------------- */
+.containerComment button {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-top: -1rem;
+  font-size: 1rem;
+  border: none;
+  background: #61016B;
+  padding: 1rem;
+  color: white;
+  height: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.containerComment .commentsubmit #comment {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  border-bottom: solid rgba(0, 0, 0, 0.212) 0.5px;
+}
+.containerComment .commentsubmit input:focus {
+  border-bottom: solid rgba(0, 0, 0, 0.212) 0.5px;
+  outline: none;
+  border-bottom: solid;
+}
+.containerComment .commentsubmit #score {
+  margin-top: 0.5rem;
+  border: none;
+  border-bottom: solid rgba(0, 0, 0, 0.212) 0.5px;
+}
+
+/* --------------- Responsive Comment Page ---------------- */
+@media (max-width: 469px) {
+  .containerComment button {
+    position: relative;
+    margin-left: 0;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
 /* --------------- Responsive Location Page ---------------- */
 @media (max-width: 1025px) {
   .location {

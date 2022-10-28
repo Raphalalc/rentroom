@@ -1,17 +1,21 @@
 
- <div class="containerComment">
+
+
+   
+     <div class="containerComment">
+     <h2>Commentaires</h2>
  <?php if(isset($_SESSION['flashComment'])): ?>
                 <?php foreach($_SESSION['flashComment'] as $flash): ?>
                     <?= "<div class=flash>{$flash} </div>" ?>
                    <?php endforeach; ?>
-        <?php endif ?>
-
-    <form action="post">
-      <input type="text" name="comment" placeholder="Ecrivez votre commentaire" autocomplete="off">
-      <input type="text" name="score" placeholder="Ecrivez une note de 0 à 10" autocomplete="off">
+  <?php endif ?>
+     <form action="post">
+      <div class="commentsubmit">
+      <input id="comment" type="text" name="comment" placeholder="Ecrivez votre commentaire" autocomplete="off">
+      <input id="score" type="text" name="score" placeholder="Ecrivez une note de 0 à 10" autocomplete="off">
       <button name="add_comment">Ajouter un commentaire</button>
+      </div>
     </form>
-     <h2>Commentaires</h2>
             <?php foreach($resultFeed as $feed): ?>
                 <p><?= '<span class="score">'.$feed['score']. ' 
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -22,4 +26,4 @@
                 <p><?= $feed['comment'] ?></p> <br>
             <?php endforeach; ?>
 </div>
-            </div>
+           
