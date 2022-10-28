@@ -313,11 +313,9 @@ body {
 .containerCard .Card a {
   text-decoration: none;
 }
-.containerCard .Card .imgCard {
+.containerCard .Card .imgCard img {
   width: 300px;
   height: 300px;
-}
-.containerCard .Card .imgCard img {
   border-radius: 20px;
 }
 .containerCard .Card .headerCard {
@@ -349,10 +347,18 @@ body {
   color: #000000;
 }
 
+/* --------------- Responsive Card ---------------- */
 @media (max-width: 376px) {
-  .containerCard .Card .imgCard {
+  .containerCard {
+    gap: 1em;
+  }
+  .containerCard .Card {
     width: 280px;
-    height: 460px;
+  }
+  .containerCard .Card .imgCard img {
+    width: 280px;
+    height: 280px;
+    border-radius: 20px;
   }
 }
 /* --------------- LOCATION PAGE ---------------- */
@@ -460,6 +466,7 @@ body {
   font-size: 24px;
 }
 
+/* --------------- Responsive Location Page ---------------- */
 @media (max-width: 1025px) {
   .location {
     width: 762px;

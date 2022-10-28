@@ -63,4 +63,3 @@ SELECT * FROM `feedback, room, user` WHERE `feedback`.`room_id` = `room`.`id` AN
 
 INSERT INTO `user` (`username`, `first_name`, `last_name`, `password`, `email`) VALUES ('raphael', 'raphael', 'alcantara', '1234','raphael@gmail.com');
 
-INSERT INTO `feedback` (`user_id`, `room_id`, `comment`, `score`) VALUES (1, 1, 'C\'est un super endroit', 5);
