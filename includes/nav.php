@@ -1,3 +1,5 @@
+<?php if(isset($_POST['button1'])) { session_unset();}?>
+
 <nav class="navigation">
     <div class="parent">
      <div class="div1"> 
@@ -18,15 +20,25 @@
 </div>
 </div>
 <div class="div3">
-
+<?php if(isset($_SESSION['id'])): ?>
+                        <div class="login"> <?= $_SESSION['username'] ?></div>
+<?php endif ?>
         <div class="dropdown">
                 <div class="mini_menu">
                 <img src="./assets/menu.png" width="27" height='27' alt="icon menu">
                 <img id="person" src="./assets/icon_person.png" width="20" height='24' alt="icon person" >
                 </div>
         <div class="dropdown-content">
-                <p><a href="#suscribe"><b>Inscription</b></a></p>
+      
+        <?php if(isset($_SESSION['id'])): ?>
+                <p id="profil" ><?= 'Profil : ' .$_SESSION['username'] ?> </p>
+        <?php endif ?>
+                
+                <p><a href="#suscribe">Inscription</a></p>
                 <p><a href="#connexion">Connexion</a></p>
+       <form method="post">
+               <input type="submit" name="button1"
+                value="Déconnexion"/>
         </div>
 </div>
 

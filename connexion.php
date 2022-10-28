@@ -15,14 +15,13 @@ if(isset($_POST['envoi'])){
     $inscription = $dbh->query("INSERT INTO `user`(`username`, `first_name`, `last_name`, `email`, `password`) VALUES ('$user_name','$first_name','$last_name','$email','$password')");
     $dbh->exec('$inscription');    
 
-echo 'New record created successfully';
-    }else{
-        echo 'Veuillez remplir tous les champs';
+    return flash('New record created successfully');
+}else{
+    return flash('Veuillez remplir tous les champs');
     }
 }
 
 ?>
-
 <html>
 <!DOCTYPE html>
 <html lang="fr">
@@ -46,6 +45,8 @@ echo 'New record created successfully';
         <input type="password" name="password" placeholder="Password">
 
         <input type="submit" name='envoi' >
+
+    
     </form>   
 
 

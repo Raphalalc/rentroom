@@ -84,8 +84,12 @@ body{
     }
         }
         .div3 { display:flex; flex-direction:row; align-items: center; justify-content:flex-end; grid-area: 1 / 3 / 2 / 4;
-  
-      
+            .login{
+                margin-right:1rem;
+                color :$purple;
+                font-weight:bold;
+            }
+            
             .mini_menu{
                 display:flex;
                 justify-content: space-around;
@@ -111,9 +115,19 @@ body{
                     cursor: pointer;
                     a{
                         text-decoration:none;
-                    }
-                    p:hover{
                         color:$purple;
+                    }
+                    #profil{
+                        display:none;
+                        color:$purple;
+                        cursor:default;
+                        font-weight:bold;
+                    }
+                    input{
+                        border:none;
+                        color:$purple;
+                        cursor:pointer;
+                        font-size:1rem;
                     }
                 }             
          }        
@@ -160,11 +174,21 @@ body{
 
     @media (max-width: 900px) { 
         .navigation{ .div1{ #title{ font-size:1rem;}}}
-
-
-
-
     }
+
+    @media (max-width: 426px) {
+     .navigation{   .div3{
+            .login{
+                display:none;
+            }
+            .dropdown-content {
+                #profil{
+                display:block;
+                font-size:0.9rem;
+            }
+        }
+    }} 
+}
 /* ---------------INDEX PAGE---------------- */
 /* --------------- CARD ---------------- */
 
@@ -184,9 +208,9 @@ body{
             text-decoration:none;
         }
         .imgCard{
-            width:300px;
-            height:300px;
             img{
+                width:300px;
+                height:300px;
                 border-radius:20px;
             }
         }
@@ -223,10 +247,19 @@ body{
     }
     }
 }
-
-
-
-
+/* --------------- Responsive Card ---------------- */
+@media (max-width: 376px) { 
+.containerCard{ 
+    gap: 1em;
+    .Card{
+        width:280px;
+        .imgCard{    
+            img{
+    width:280px;
+    height:280px;
+    border-radius:20px;
+}}}}
+}
 /* --------------- LOCATION PAGE ---------------- */
 
 .location{
@@ -339,7 +372,7 @@ body{
     }
 
 
-    // RESPONSIVE LOCATION PAGE
+  /* --------------- Responsive Location Page ---------------- */
 @media (max-width: 1025px) {
     .location{
         width:762px;
@@ -348,10 +381,10 @@ body{
                 width:400px; height:300px;
             }
         }
-   
+
     .reservation{ 
         height:110px;
-    }
+        }
     } 
 }
 
@@ -367,8 +400,7 @@ body{
                 font-size:0.7rem;
             }
         }
-        .parent {
-            
+        .parent {       
             margin-left:1rem;
             margin-right:1rem;
             display: grid;
@@ -407,11 +439,9 @@ body{
                 
             }
             img{
-                
                 width:100%;
                 height:auto;
             }
-            
         }
         
         .div1{

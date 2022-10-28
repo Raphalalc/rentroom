@@ -8,4 +8,3 @@ window.addEventListener("click", function(e) {
         dropdownContent.style.display = "none";
       }
 });
-

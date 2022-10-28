@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('./includes/database.php');
+require('./includes/flash.php');
 $id = $_GET['id'];
 $city = $_GET['city'];
 
@@ -51,16 +52,16 @@ $resultImages = $images->fetchAll();
     
 </head>
 <body>
-<?php require('./includes/nav.php') ?>
 <?php require('./includes/popupInscription.php') ?>
     <?php require('./includes/popupConnexion.php') ?>
+    <?php require('./includes/nav.php') ?>
     <main>
  
        
         <div class="location"> 
             <?php foreach($result as $roomSlot): ?>                                
                 <h1><?= $roomSlot['name'] ?> 
-            </h1>
+                </h1>
                 <div class="adress"> 
                 
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FDA11C" class="bi bi-star-fill" viewBox="0 0 16 16">

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require('./includes/database.php');
+require('./includes/flash.php');
 
 $req = $dbh->query("SELECT r.*, s.*
 FROM `slot` s 
@@ -31,19 +32,17 @@ $moyenne  = $dbh->query("SELECT AVG(`score`)
 
 </head>
 <body>
-    <?php require('./includes/nav.php') ?>
     <?php require('./includes/popupInscription.php') ?>
     <?php require('./includes/popupConnexion.php') ?>
+    <?php require('./includes/nav.php') ?>
 <main>
-
-
 <div class="containerCard">
 <?php foreach($result as $roomSlot): ?>
 <div data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     <div class="Card">
         <a href="location.php?id=<?= $roomSlot['id']?>&city=<?= $roomSlot['city']?> "> 
         <div class="imgCard">
-            <img width="300" height="300"src="<?= $roomSlot['picture_url'] ?>" alt="room">
+            <img src="<?= $roomSlot['picture_url'] ?>" alt="room">
         </div>
         <div class="headerCard">
             <p><?= $roomSlot['name'].' ' ?></p>
@@ -75,12 +74,11 @@ $moyenne  = $dbh->query("SELECT AVG(`score`)
         </div>
         </div>
           <?php endforeach; ?>
+          
      </div>
-
         </main>
-       
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>AOS.init(); </script>
-<script src="./script/menu.js"></script>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>AOS.init(); </script>
+            <script src="./script/menu.js"></script>
     </body>
 </html>
