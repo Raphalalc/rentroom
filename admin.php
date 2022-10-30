@@ -1,9 +1,22 @@
 <?php 
 session_start();
 require('./includes/database.php');
-
 if($_SESSION['email']!= 'admin@gmail.com'){
     header('location:index.php');
+}
+
+ $listeReservation =$dbh->query("SELECT * FROM `reservation`");
+ $resultReservation = $listeReservation ->fetchAll();
+
+if(isset($_POST['delete_button'])){
+    $slot_id = $_POST['value_slot_id'];
+    $slot_libre = "UPDATE `slot` SET `status`='libre' WHERE id = '$slot_id'";
+    $resultSlot_libre = $dbh->prepare($slot_libre );
+    $resultSlot_libre->execute();
+    
+    $delete_id = $_POST['delete_id'];
+    $delete = $dbh->query("DELETE FROM `reservation` WHERE id = '$delete_id'");
+    header('location:admin.php');
 }
 ?>
 <!DOCTYPE html>
@@ -20,7 +33,43 @@ if($_SESSION['email']!= 'admin@gmail.com'){
 <?php require('./includes/popupConnexion.php') ?>
 <?php require('./includes/nav.php') ?>
     <main>
-        <h2>Page admin</h2>
+
+        <div class="container_admin" >
+        <h1>Page admin</h1>
+        <h2>Liste des réservations</h2>
+       
+            <table>
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>user_id</th>
+                        <th>slot_id</th>
+                        <th>created_at</th>
+                        <th>delete</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <?php foreach( $resultReservation  as $reservation): ?>  
+                                <tr>
+                                    <?= '<th>'.$reservation['id'].'</th>' ?> 
+                                    <?= '<th>'.$reservation['user_id'].'</th>' ?>
+                                    <?= '<th>'.$reservation['slot_id'].'</th>' ?>
+                                    <?= '<th>'.$reservation['created_at'].'</th>' ?>
+                                        <th>
+                                            <form method ="POST">
+                                                <input type="hidden" name="delete_id" value="<?= $reservation['id'] ?>">
+                                                <input type="hidden" name="value_slot_id" value="<?= $reservation['slot_id'] ?>">
+                                                <button type="submit" name="delete_button">Delete</button>
+                                            </form>
+                                        </th>
+                                </tr>
+                            <?php endforeach; ?>  
+                    </tbody>
+            </table>
+     
+
+        </div>
     </main>
     <script src="./script/menu.js"></script>
 </body>

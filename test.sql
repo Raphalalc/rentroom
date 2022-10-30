@@ -75,3 +75,5 @@ ORDER BY slot.arrival_date DESC");
 UPDATE `slot`
 SET `status` = 'libre'
 WHERE `id` = $_GET[id];
+
+INSERT INTO `reservation` (`user_id`, `slot_id`) VALUES ('$_SESSION[id]', '$_GET[id]');

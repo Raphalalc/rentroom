@@ -588,4 +588,74 @@ body {
   .location .images {
     justify-content: center;
   }
+}
+/* --------------- Page admin  ---------------- */
+.container_admin {
+  margin-top: 30px;
+  margin-left: auto;
+  width: 700px;
+  margin-right: auto;
+}
+.container_admin h1 {
+  color: #61016B;
+}
+.container_admin h2 {
+  margin-top: 30px;
+}
+.container_admin table {
+  border-collapse: collapse;
+}
+.container_admin table thead tr th {
+  border-bottom: solid rgba(0, 0, 0, 0.466) 2px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 45px;
+  padding-right: 45px;
+  border-collapse: collapse;
+}
+.container_admin table tbody tr th {
+  padding: 10px;
+  border-collapse: collapse;
+}
+.container_admin table tbody tr th button {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: rgba(128, 128, 128, 0.486);
+  padding: 0.8rem;
+  color: white;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.container_admin table tbody tr th button:hover {
+  background: red;
+}
+
+@media (max-width: 769px) {
+  .container_admin {
+    width: 82%;
+  }
+  .container_admin table {
+    width: 80%;
+  }
+  .container_admin table thead tr th {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 499px) {
+  .container_admin {
+    overflow-x: auto;
+  }
+  .container_admin h1 {
+    font-size: 2rem;
+  }
+  .container_admin h2 {
+    font-size: 1.2rem;
+  }
 }/*# sourceMappingURL=global.css.map */

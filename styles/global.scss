@@ -502,5 +502,90 @@ button{
            justify-content: center;
         }
     }
-
 }
+
+  /* --------------- Page admin  ---------------- */
+  .container_admin{
+    margin-top:30px;
+    margin-left:auto;
+    width:700px;
+    margin-right:auto;
+    h1{
+        color:$purple;
+    }
+    h2{
+        margin-top:30px;
+    }
+    table{
+        border-collapse: collapse;
+        
+        thead{
+            tr{
+                th{
+                    border-bottom: solid rgba(0, 0, 0, 0.466) 2px;
+                    padding-bottom:10px;
+                    padding-top:10px;
+                    padding-left:45px;
+                    padding-right:45px;
+                    border-collapse: collapse;
+                }
+            }
+        }
+
+        tbody{
+            tr{
+                th{
+                    padding:10px;
+                    border-collapse: collapse;
+                   button{
+                        margin:auto;
+                        display:flex;
+                        justify-content:center;
+                        align-items:center;
+                        border:none;
+                        background: rgba(128, 128, 128, 0.486);
+                        padding:0.8rem;
+                        color:white;
+                        height:30px;
+                        cursor:pointer;
+                        border-radius:5px;
+                   }
+                   button:hover{
+                    background:red;
+                   }
+                }
+            }
+        }
+    }
+  }
+
+  @media(max-width:769px){
+    .container_admin{
+        width:82%;
+        table{
+            width:80%;
+            thead{
+                tr{
+                    th{
+                        padding-bottom:10px;
+                        padding-top:10px;
+                        padding-left:15px;
+                        padding-right:15px;
+                    }
+                }
+            }
+        }
+    }
+  }
+
+  @media(max-width:499px){
+    .container_admin{
+        overflow-x: auto;
+        h1{
+            font-size:2rem;
+        }
+        h2{
+            font-size:1.2rem;
+        }
+    }
+  }

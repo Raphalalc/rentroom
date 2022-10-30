@@ -52,11 +52,13 @@ if(isset($_POST['reservation'])){
     $reservation = "UPDATE slot SET status='reserve' WHERE id = '$id'";
     $resultReservation = $dbh->prepare($reservation);
     $resultReservation->execute();
+    $insert_reservation = $dbh->query("INSERT INTO `reservation` (`user_id`, `slot_id`) VALUES ('$_SESSION[id]', '$id')");
+    $dbh->exec('$insert_reservation');    
     echo "<script>let reserv = alert('Votre réservation a bien été prise en compte, retour au menu principal.')
           window.location.href = 'index.php';
     </script>";
    
-    // header ('Location: index.php');
+    
 
     }
 }
