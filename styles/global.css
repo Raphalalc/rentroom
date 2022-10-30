@@ -613,6 +613,14 @@ body {
   padding-right: 45px;
   border-collapse: collapse;
 }
+.container_admin table #slot tr th {
+  border-bottom: solid rgba(0, 0, 0, 0.466) 2px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 28px;
+  padding-right: 28px;
+  border-collapse: collapse;
+}
 .container_admin table tbody tr th {
   padding: 10px;
   border-collapse: collapse;
@@ -636,6 +644,7 @@ body {
 
 @media (max-width: 769px) {
   .container_admin {
+    overflow-x: auto;
     width: 82%;
   }
   .container_admin table {
@@ -646,6 +655,14 @@ body {
     padding-top: 10px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+  .container_admin table #slot tr th {
+    border-bottom: solid rgba(0, 0, 0, 0.466) 2px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-collapse: collapse;
   }
 }
 @media (max-width: 499px) {

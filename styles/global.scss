@@ -531,12 +531,25 @@ button{
                 }
             }
         }
-
+       #slot{
+            tr{
+                th{
+                    border-bottom: solid rgba(0, 0, 0, 0.466) 2px;
+                    padding-bottom:10px;
+                    padding-top:10px;
+                    padding-left:28px;
+                    padding-right:28px;
+                    border-collapse: collapse;             
+                }
+            }
+        }
+       
         tbody{
             tr{
                 th{
                     padding:10px;
                     border-collapse: collapse;
+                  
                    button{
                         margin:auto;
                         display:flex;
@@ -561,6 +574,7 @@ button{
 
   @media(max-width:769px){
     .container_admin{
+   overflow-x: auto;
         width:82%;
         table{
             width:80%;
@@ -574,7 +588,23 @@ button{
                     }
                 }
             }
+            #slot{
+                tr{
+                    th{
+                        border-bottom: solid rgba(0, 0, 0, 0.466) 2px;
+                        padding-bottom:10px;
+                        padding-top:10px;
+                        padding-left:8px;
+                        padding-right:8px;
+                        border-collapse: collapse;   
+                                
+                    }
+                }
+            }
         }
+     
+           
+        
     }
   }
 
