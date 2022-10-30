@@ -11,8 +11,8 @@
   <?php endif ?>
      <form action="post">
       <div class="commentsubmit">
-      <input id="comment" type="text" name="comment" placeholder="Ecrivez votre commentaire" autocomplete="off">
-      <input id="score" type="text" name="score" placeholder="Ecrivez une note de 0 à 10" autocomplete="off">
+    <div class="comment"><input id="comment" type="text" name="comment" placeholder="Ecrivez votre commentaire" autocomplete="off"></div>  
+      <div class="score"><input id="score" type="text" name="score" placeholder="Ecrivez une note de 0 à 10" autocomplete="off"></div>
       <button name="add_comment">Ajouter un commentaire</button>
       </div>
     </form>

@@ -38,8 +38,6 @@ $resultImages = $images->fetchAll();
     WHERE slot.id = $_GET[id]");
     $resultMoyenne  = $moyenne ->fetchAll();  
 
-    if(isset($_POST['button1'])) { session_unset();}
-
     require('./includes/commentaireScript.php'); 
 ?>
 
@@ -123,7 +121,7 @@ $resultImages = $images->fetchAll();
                 <h2 id='produit'>Autres produits à <?= $roomSlot['city'] ?></h2>
                 <div class="images">
                 <?php foreach($resultImages as $images): ?>    
-                    <a href="./location.php?id=<?= $images['id']?>&city=<?= $images['city']?>">
+                    <a href="index.php">
                     <img width="200" height="200"src="<?= $images['picture_url'] ?>" alt="room">
                 </a>      
     <?php endforeach; ?>

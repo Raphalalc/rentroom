@@ -8,6 +8,7 @@
         $resultLogin->execute(array($email ,$password));
         $row =  $resultLogin->rowCount();
         $fetch =$resultLogin->fetch();
+       
         if($row > 0) {
             $_SESSION['id'] = $fetch['id'];
             $_SESSION['username'] = $fetch['username'];
@@ -15,14 +16,22 @@
             $_SESSION['last_name'] = $fetch['last_name'];
             $_SESSION['email'] = $fetch['email'];
         flashConnexion('Connexion réussie.');
+        if($_SESSION['email']== 'admin@gmail.com'){
+            header('location:admin.php');
+            
+        }
     } 
+   
        }else{
         flashConnexion('Connexion invalide.');
+ 
        }
     }
-
-
+    if(isset($_POST['button1'])) {
+        session_unset(); 
+        header('location:index.php');}
 ?>
+
 <div class="overlay" id="connexion">
     <div class="suscribe">
             <h2>Connexion</h2>

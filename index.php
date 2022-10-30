@@ -18,7 +18,6 @@ $moyenne  = $dbh->query("SELECT AVG(`score`)
     ON feedback.room_id = room.id ");
     $resultMoyenne  = $moyenne ->fetchAll();
       
-    if(isset($_POST['button1'])) { session_unset();}
 ?>
 
 <!DOCTYPE html>
