@@ -71,3 +71,7 @@ JOIN feedback
 ON feedback.room_id = room.id 
 WHERE slot.id = $_GET[id]
 ORDER BY slot.arrival_date DESC");
+
+UPDATE `slot`
+SET `status` = 'libre'
+WHERE `id` = $_GET[id];

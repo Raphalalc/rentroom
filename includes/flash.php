@@ -15,3 +15,8 @@ function flashComment($message)
 {
     $_SESSION['flashComment'] = ['message' => $message,];
 }
+
+function flashReservation($message)
+{
+    $_SESSION['flashReservation'] = ['message' => $message,];
+}

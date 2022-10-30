@@ -316,12 +316,11 @@ body{
         .cat1 { grid-area: 1 / 1 / 2 / 2; }
         .cat2 { grid-area: 1 / 2 / 2 / 3; }
     }        
-    .reservation{
+    .reservation_header{
         display: flex;
         justify-content: flex-end;
         align-items: flex-end;
-        height:240px;
-        
+        height:235px;
         p{
             font-family: 'circular_stdbold', sans-serif;
             font-weight: bold;
@@ -341,7 +340,13 @@ body{
         }
       
     }
+    .reservation_footer{
+       margin-top:-5px;
+        .flash_reservation{
 
+            color:$purple;
+        }
+    }
     #produit{
         color:$purple;
     }
@@ -429,7 +434,7 @@ button{
             }
         }
 
-    .reservation{ 
+    .reservation_header{ 
         height:110px;
         }
     } 
@@ -459,7 +464,7 @@ button{
             
             .div1 { display:flex;  grid-area: 1 / 1 / 2 / 2; }
             .div2 { margin-top:0.5rem; grid-area: 2 / 1 / 3 / 2;}
-        .reservation{ 
+        .reservation_header{ 
             height:70px;
             justify-content: flex-start;
             }   

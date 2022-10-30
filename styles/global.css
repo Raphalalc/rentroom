@@ -420,19 +420,19 @@ body {
 .location .date .cat2 {
   grid-area: 1/2/2/3;
 }
-.location .reservation {
+.location .reservation_header {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  height: 240px;
+  height: 235px;
 }
-.location .reservation p {
+.location .reservation_header p {
   font-family: "circular_stdbold", sans-serif;
   font-weight: bold;
   font-size: 20px;
   color: #000000;
 }
-.location .reservation button {
+.location .reservation_header button {
   width: 130px;
   height: 40px;
   color: white;
@@ -442,6 +442,12 @@ body {
   border-radius: 10px;
   cursor: pointer;
   margin-left: 1rem;
+}
+.location .reservation_footer {
+  margin-top: -5px;
+}
+.location .reservation_footer .flash_reservation {
+  color: #61016B;
 }
 .location #produit {
   color: #61016B;
@@ -515,7 +521,7 @@ body {
     width: 400px;
     height: 300px;
   }
-  .location .reservation {
+  .location .reservation_header {
     height: 110px;
   }
 }
@@ -549,7 +555,7 @@ body {
     margin-top: 0.5rem;
     grid-area: 2/1/3/2;
   }
-  .location .reservation {
+  .location .reservation_header {
     height: 70px;
     justify-content: flex-start;
   }
