@@ -1,5 +1,6 @@
 let dropdownContent = document.querySelector(".dropdown-content");
 let dropdown = document.querySelector(".dropdown");
+let miniMenu = document.querySelector(".mini_menu");
 
 window.addEventListener("click", function(e) {
     if (dropdown.contains(e.target || dropdownContent.style.display === "none")) {
@@ -8,3 +9,4 @@ window.addEventListener("click", function(e) {
         dropdownContent.style.display = "none";
       }
 });
+

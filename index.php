@@ -18,6 +18,17 @@ $moyenne  = $dbh->query("SELECT AVG(`score`)
     ON feedback.room_id = room.id ");
     $resultMoyenne  = $moyenne ->fetchAll();
       
+//   FONCTION RECHERCHE
+    if(isset($_POST['research'])){
+        if(!empty($_POST['rechercheSalon'])){
+        $req = $dbh->query("SELECT r.*, s.*
+        FROM `slot` s 
+        LEFT JOIN `room` r 
+        ON s.`room_id` = r.`id`
+        WHERE s.`status`='libre' && r.`name` LIKE '".$_POST['rechercheSalon']."%'");
+        $result = $req->fetchAll();  
+    }
+}
 ?>
 
 <!DOCTYPE html>
