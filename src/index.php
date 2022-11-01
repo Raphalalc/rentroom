@@ -7,7 +7,7 @@ $req = $dbh->query("SELECT r.*, s.*
 FROM `slot` s 
 LEFT JOIN `room` r 
 ON s.`room_id` = r.`id`
-WHERE s.`status`='libre'");
+WHERE s.`status`='libre' AND s.`arrival_date` >= CURDATE() ");
 $result = $req->fetchAll();  
 
       
