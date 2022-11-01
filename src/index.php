@@ -18,7 +18,7 @@ $result = $req->fetchAll();
         FROM `slot` s 
         LEFT JOIN `room` r 
         ON s.`room_id` = r.`id`
-        WHERE s.`status`='libre' && r.`name` LIKE '".$_POST['rechercheSalon']."%'");
+        WHERE s.`status`='libre' AND s.`arrival_date` >= CURDATE() AND r.`name` LIKE '".$_POST['rechercheSalon']."%'" );
         $result = $req->fetchAll();  
     }
 }
