@@ -14,15 +14,13 @@ WHERE slot.`id` = $_GET[id]");
 $result = $req->fetchAll(); 
 
 //feedback
-$feed = $dbh->query("SELECT * 
-FROM slot 
-JOIN room  
-ON slot.room_id = room.id 
-JOIN feedback 
-ON feedback.room_id = room.id 
-WHERE slot.id = $_GET[id]
-ORDER BY feedback.created_at DESC");
-$resultFeed = $feed->fetchAll();  
+$feed = $dbh->query("SELECT u.*, f.* 
+FROM `user` u 
+LEFT JOIN `feedback` f 
+ON f.`user_id` = u.`id`
+WHERE f.`room_id`= $room_id
+ORDER BY f.`created_at` DESC");
+$resultFeed = $feed->fetchAll();
 
 //liste d'images
 $images = $dbh->query("SELECT * FROM `room` WHERE `city` = '$city'");
@@ -63,8 +61,6 @@ if(isset($_POST['reservation'])){
 if(isset($_POST['research'])){
   header('location:index.php');
 }
-
-
     require('./includes/commentaireScript.php'); 
 ?>
 
@@ -81,7 +77,7 @@ if(isset($_POST['research'])){
     
 </head>
 <body>
-<?php require('./includes/popupInscription.php') ?>
+    <?php require('./includes/popupInscription.php') ?>
     <?php require('./includes/popupConnexion.php') ?>
     <?php require('./includes/nav.php') ?>
     <main>
@@ -96,9 +92,11 @@ if(isset($_POST['research'])){
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FDA11C" class="bi bi-star-fill" viewBox="0 0 16 16">
                         <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
                     </svg>
-                    <span><?php foreach($resultMoyenne as $moy): ?>
-                    <?= $note = round($moy['AVG(`score`)'], 2)  ?>
-                    <?php endforeach; ?></span>
+                    <span>
+                        <?php foreach($resultMoyenne as $moy): ?>
+                        <?= $note = round($moy['AVG(`score`)'], 2)  ?>
+                        <?php endforeach; ?>
+                    </span>
 
                 <img src="./assets/pin.png" alt="pin">
                    <p> <?= ' '.$roomSlot['address'].' ,'. $roomSlot['zip_code'].' '.$roomSlot['city'] .' '.$roomSlot['country'] ?></p>
@@ -157,15 +155,16 @@ if(isset($_POST['research'])){
                 <br>
                 <h2 id='produit'>Autres produits à <?= $roomSlot['city'] ?></h2>
                 <div class="images">
-                <?php foreach($resultImages as $images): ?>    
-                    <a href="index.php">
-                    <img width="200" height="200"src="<?= $images['picture_url'] ?>" alt="room">
-                </a>      
-    <?php endforeach; ?>
+                <?php for($i = 0; $i < 4; $i++): ?>
+                    <?php if(isset($resultImages[$i])): ?>
+                <a href="index.php">
+                    <img width="200" height="200"src="<?= $resultImages[$i]['picture_url'] ?>" alt="room">
+                </a>
+                <?php endif; ?>
+            <?php endfor; ?>
     </div>
         
     <?php require('./includes/comment.php') ?>
-
 
 </main>
 <script src="./script/menu.js"></script>

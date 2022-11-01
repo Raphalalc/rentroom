@@ -319,7 +319,6 @@ body {
   gap: 3em;
 }
 .containerCard .Card {
-  margin-bottom: 2rem;
   cursor: pointer;
   width: 300px;
   height: 460px;
@@ -342,9 +341,26 @@ body {
   font-size: 20px;
   color: #61016B;
 }
+.containerCard .Card .headerCard svg {
+  margin-left: 0.5rem;
+}
+.containerCard .Card .headerCard #note {
+  margin-left: 0.2rem;
+  color: black;
+  font-size: 1rem;
+  display: block;
+  margin-top: 3px;
+  font-weight: bold;
+}
 .containerCard .Card .bodyCard {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .containerCard .Card .bodyCard p {
   color: #000000;
@@ -486,6 +502,10 @@ body {
 }
 
 /* --------------- Comment Page ---------------- */
+.containerComment p #spanFeed {
+  font-weight: bold;
+  color: #61016B;
+}
 .containerComment button {
   margin-left: auto;
   display: flex;

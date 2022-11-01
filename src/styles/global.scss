@@ -214,7 +214,6 @@ body{
     width:100%;
     gap: 3em;
     .Card{
-        margin-bottom:2rem;
         cursor:pointer;
         width:300px;
         height:460px;
@@ -237,11 +236,28 @@ body{
         font-weight:bold;
         font-size:20px;
         color:$purple;
+        svg{
+            margin-left:0.5rem;
+        }
+        #note{
+            margin-left:0.2rem;
+            color:black;
+            font-size:1rem;
+            display:block;
+            margin-top:3px;
+            font-weight: bold;
+        }
     }
     
     .bodyCard {
         padding-left:0.5rem;
         padding-right:0.5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        line-clamp: 4; 
+        -webkit-box-orient: vertical;
         p{
             color:$black;
         } 
@@ -392,6 +408,12 @@ body{
 
    /* --------------- Comment Page ---------------- */
    .containerComment{
+    p{
+    #spanFeed{
+        font-weight:bold;
+        color:$purple;
+    }
+}
 button{
     margin-left:auto;
     display:flex;
@@ -426,7 +448,9 @@ button{
             border-bottom: solid rgba(0, 0, 0, 0.212) 0.5px;        
         }
     }
+
    }
+
  /* --------------- Responsive Comment Page ---------------- */
  @media(max-width:469px){
     .containerComment{
