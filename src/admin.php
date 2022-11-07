@@ -8,8 +8,11 @@ if($_SESSION['email']!= 'admin@gmail.com'){
  $listeReservation =$dbh->query("SELECT * FROM `reservation`");
  $resultReservation = $listeReservation ->fetchAll();
 
-$slot = $dbh->query("SELECT * FROM `slot` WHERE `status`='libre'");
+$slot = $dbh->query("SELECT * FROM `slot` WHERE `status`='libre'  AND `arrival_date` >= CURDATE() ");
 $slotResult = $slot->fetchAll();
+
+$slotExpire = $dbh->query("SELECT * FROM `slot` WHERE `status`='libre'  AND `arrival_date` < CURDATE() ");
+$slotExpireResult = $slotExpire->fetchAll();
 
 if(isset($_POST['delete_button'])){
     $slot_id = $_POST['value_slot_id'];
@@ -100,6 +103,34 @@ if(isset($_POST['delete_button'])){
                     </tbody>
             </table>
 
+            <h2>Liste de slot expiré</h2>
+            <table id="tableslot">
+                <thead id="slot">
+                    <tr>
+                        <th>id</th>
+                        <th>room_id</th>
+                        <th>arrival_date</th>
+                        <th>departure_date</th>
+                        <th>price</th>
+                        <th>status</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <?php foreach( $slotExpireResult as $s): ?>  
+                                <tr>              
+                                    <div class="slot">
+                                    <?= '<th>'.$s['id'].'</th>' ?> 
+                                    <?= '<th>'.$s['room_id'].'</th>' ?>
+                                    <?= '<th>'.$s['arrival_date'].'</th>' ?>
+                                    <?= '<th>'.$s['departure_date'].'</th>' ?>
+                                    <?= '<th>'.$s['price'].' €</th>' ?>
+                                    <?= '<th>'.$s['status'].'</th>' ?>
+                            </div>
+                                </tr>
+                            <?php endforeach; ?>  
+                    </tbody>
+            </table>
         </div>
     </main>
     <script src="./script/menu.js"></script>
