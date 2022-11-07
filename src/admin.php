@@ -11,7 +11,7 @@ if($_SESSION['email']!= 'admin@gmail.com'){
 $slot = $dbh->query("SELECT * FROM `slot` WHERE `status`='libre'  AND `arrival_date` >= CURDATE() ");
 $slotResult = $slot->fetchAll();
 
-$slotExpire = $dbh->query("SELECT * FROM `slot` WHERE `status`='libre'  AND `arrival_date` < CURDATE() ");
+$slotExpire = $dbh->query("SELECT * FROM `slot` WHERE  `arrival_date` < CURDATE() ");
 $slotExpireResult = $slotExpire->fetchAll();
 
 if(isset($_POST['delete_button'])){
