@@ -103,7 +103,7 @@ if(isset($_POST['delete_button'])){
                     </tbody>
             </table>
 
-            <h2>Liste de slot expiré</h2>
+            <h2>Liste de slots expiré</h2>
             <table id="tableslot">
                 <thead id="slot">
                     <tr>
